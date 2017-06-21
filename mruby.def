@@ -49,7 +49,6 @@ EXPORTS
 	mrb_const_get
 	mrb_const_remove
 	mrb_const_set
-	mrb_context_run
 	mrb_convert_to_integer
 	mrb_convert_type
 	mrb_cv_defined
@@ -250,13 +249,13 @@ EXPORTS
 	mrb_sys_fail
 	mrb_to_flo
 	mrb_to_int
+	mrb_top_run
 	mrb_top_self
-	mrb_toplevel_run
-	mrb_toplevel_run_keep
 	mrb_undef_class_method
 	mrb_undef_method
 	mrb_vm_define_class
 	mrb_vm_define_module
+	mrb_vm_run
 	mrb_warn
 	mrb_write_barrier
 	mrb_yield
