@@ -31,6 +31,7 @@ MRuby.each_target do
     gem_flags << (is_vc ? '/DLL' : '-shared')
     gem_flags << (is_vc ? "/DEF:#{deffile}" : mruby_sharedlib_ext == 'dylib'? '-Wl,-force_load' : is_mingw ? deffile : "-Wl,--whole-archive")
     gem_flags << "/MACHINE:#{ENV['Platform']}" if is_vc && ENV['Platform']
+    gem_flags << "-nostdlib" if RUBY_PLATFORM =~ /linux/i
     gem_flags += t.prerequisites
     gem_libraries = gems.map { |g| g.linker.libraries }
     gem_library_paths = gems.map { |g| g.linker.library_paths }
